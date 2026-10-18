@@ -1,0 +1,897 @@
+
+
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Grimoire - Không Thời Vạn Tượng</title>
+
+<style>
+
+* { box-sizing: border-box; }
+
+:root {
+
+  --navy: #09152b;
+
+  --blue: #183d70;
+
+  --cyan: #a5e7ff;
+
+  --silver: #e0ebf5;
+
+  --paper: #f4f8fc;
+
+  --ink: #19324d;
+
+}
+
+body {
+
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  color: var(--ink);
+
+  background: radial-gradient(
+
+    circle at top, #244e7c, #09152b 65%, #030914
+
+  );
+
+  line-height: 1.7;
+
+}
+
+header {
+
+  text-align: center;
+
+  padding: 70px 20px;
+
+  color: white;
+
+  border-bottom: 1px solid #a5e7ff66;
+
+}
+
+.symbol {
+
+  font-size: 65px;
+
+  color: var(--cyan);
+
+  text-shadow: 0 0 25px #68caff;
+
+}
+
+header h1 {
+
+  font-size: clamp(28px, 6vw, 48px);
+
+  line-height: 1.2;
+
+  text-shadow: 0 0 20px #7acaff88;
+
+}
+
+header p { color: #c9e5fa; }
+
+.badge {
+
+  display: inline-block;
+
+  padding: 5px 12px;
+
+  margin: 4px;
+
+  border: 1px solid #a5e7ff88;
+
+  border-radius: 20px;
+
+  font: 12px Arial, sans-serif;
+
+}
+
+main {
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 18px;
+
+}
+
+.panel {
+
+  margin: 20px 0;
+
+  overflow: hidden;
+
+  border: 1px solid #b9d7eb;
+
+  border-radius: 16px;
+
+  background: var(--paper);
+
+  box-shadow: 0 10px 35px #0003;
+
+}
+
+.panel h2 {
+
+  margin: 0;
+
+  padding: 18px;
+
+  color: #174775;
+
+  background: linear-gradient(100deg, #d8efff, #f8fbff);
+
+  border-bottom: 1px solid #c7dfef;
+
+}
+
+.content { padding: 18px; }
+
+input, select, button {
+
+  width: 100%;
+
+  padding: 12px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #b6ccde;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+
+}
+
+button {
+
+  background: #173d70;
+
+  color: white;
+
+  cursor: pointer;
+
+}
+
+button:hover { background: #285b91; }
+
+.contents {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+
+  gap: 12px;
+
+}
+
+.chapter {
+
+  padding: 13px;
+
+  background: white;
+
+  border: 1px solid #ccdeec;
+
+  border-radius: 10px;
+
+}
+
+.chapter strong {
+
+  display: block;
+
+  color: #205a8d;
+
+  margin-bottom: 6px;
+
+}
+
+.chapter a {
+
+  display: block;
+
+  color: #315574;
+
+  text-decoration: none;
+
+  padding: 3px 0;
+
+}
+
+.chapter a:hover {
+
+  color: #087bb2;
+
+  text-decoration: underline;
+
+}
+
+.spells {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 14px;
+
+  padding: 18px;
+
+}
+
+.spell {
+
+  background: white;
+
+  border: 1px solid #c4dbea;
+
+  border-left: 4px solid #65bce8;
+
+  border-radius: 12px;
+
+  padding: 16px;
+
+  scroll-margin-top: 15px;
+
+}
+
+.spell h3 {
+
+  margin: 5px 0;
+
+  color: #174775;
+
+  line-height: 1.35;
+
+}
+
+.rank {
+
+  color: #4381ac;
+
+  font: bold 12px Arial, sans-serif;
+
+  letter-spacing: 1px;
+
+}
+
+.type {
+
+  display: inline-block;
+
+  padding: 3px 8px;
+
+  background: #e5f4ff;
+
+  border-radius: 5px;
+
+  color: #315d80;
+
+  font: 12px Arial, sans-serif;
+
+}
+
+.spell p { font-size: 14px; }
+
+.incant {
+
+  padding: 10px;
+
+  background: #edf6fc;
+
+  border-left: 3px solid #75c9ef;
+
+  color: #214e73;
+
+  font-style: italic;
+
+}
+
+footer {
+
+  padding: 30px 15px;
+
+  text-align: center;
+
+  color: #c4e4fa;
+
+}
+
+@media print {
+
+  body { background: white; }
+
+  header { color: #173d70; }
+
+  input, select, button { display: none; }
+
+  .panel, .spell { box-shadow: none; }
+
+}
+
+@media (max-width: 500px) {
+
+  main { padding: 10px; }
+
+  .spells { padding: 10px; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="symbol">✧ ◈ ✧</div>
+
+  <p>CỔ THƯ CỦA NHỮNG VÌ SAO</p>
+
+  <h1>GRIMOIRE<br>KHÔNG THỜI VẠN TƯỢNG</h1>
+
+  <p>SPACETIME · CELESTIAL ARCHIVE</p>
+
+  <p>“Hiểu tọa độ để mở lối. Hiểu thời khắc để đổi nhịp.”</p>
+
+  <span class="badge">17 CHIÊU THỨC</span>
+
+  <span class="badge">5 CẤP BẬC</span>
+
+  <span class="badge">XANH THIÊN HÀ · BẠC</span>
+
+</header>
+
+<main>
+
+<section class="panel">
+
+<h2>✧ Mục lục Grimoire</h2>
+
+<div class="content">
+
+<input id="search" placeholder="Tìm tên chiêu thức..." oninput="filterSpells()">
+
+<select id="rank" onchange="filterSpells()">
+
+  <option value="all">Tất cả cấp bậc</option>
+
+  <option value="D">Cấp D</option>
+
+  <option value="C">Cấp C</option>
+
+  <option value="B">Cấp B</option>
+
+  <option value="A">Cấp A</option>
+
+  <option value="S">Cấp S</option>
+
+</select>
+
+<button onclick="window.print()">In / Lưu thành PDF</button>
+
+<div class="contents">
+
+  <div class="chapter">
+
+    <strong>CHƯƠNG I · CẤP D</strong>
+
+    <a href="#D-01">D-01 Không Bộ</a>
+
+    <a href="#D-02">D-02 Thời Tốc</a>
+
+    <a href="#D-03">D-03 Ngân Tinh Định Vị</a>
+
+    <a href="#D-04">D-04 Tàn Ảnh Thời Khắc</a>
+
+    <a href="#D-05">D-05 Lệch Quỹ Đạo</a>
+
+  </div>
+
+  <div class="chapter">
+
+    <strong>CHƯƠNG II · CẤP C</strong>
+
+    <a href="#C-01">C-01 Cổng Ngân Hà</a>
+
+    <a href="#C-02">C-02 Thời Vực</a>
+
+    <a href="#C-03">C-03 Không Gian Gấp Khúc</a>
+
+  </div>
+
+  <div class="chapter">
+
+    <strong>CHƯƠNG III · CẤP B</strong>
+
+    <a href="#B-01">B-01 Thiên La Tọa Độ</a>
+
+    <a href="#B-02">B-02 Thời Khắc Phân Vùng</a>
+
+    <a href="#B-03">B-03 Liên Kết Thời-Không</a>
+
+  </div>
+
+  <div class="chapter">
+
+    <strong>CHƯƠNG IV · CẤP A</strong>
+
+    <a href="#A-01">A-01 Mê Cung Vô Cự</a>
+
+    <a href="#A-02">A-02 Thần Thể Thời Không</a>
+
+    <a href="#A-03">A-03 Định Mệnh Thời Khắc</a>
+
+  </div>
+
+  <div class="chapter">
+
+    <strong>CHƯƠNG V · CẤP S</strong>
+
+    <a href="#S-01">S-01 Vạn Tinh Thời Không</a>
+
+    <a href="#S-02">S-02 Nghịch Lưu Thời Khắc</a>
+
+    <a href="#S-03">S-03 Tái Cấu Trúc Không-Thời Gian</a>
+
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>CHƯƠNG I — CẤP D: KHỞI NGUYÊN TỌA ĐỘ</h2>
+
+<div class="spells">
+
+<article class="spell" id="D-01" data-rank="D">
+
+<div class="rank">D-01 · CẤP D</div>
+
+<h3>Không Bộ</h3>
+
+<span class="type">Dịch chuyển · Không gian</span>
+
+<p><b>Mô tả:</b> Dịch chuyển quãng ngắn đến vị trí đã xác định, để lại tàn ảnh xanh bạc.</p>
+
+<p><b>Điểm mạnh:</b> Né đòn, áp sát, rút lui.</p>
+
+<p><b>Giới hạn:</b> Tầm ngắn; không đến được tọa độ chưa biết hoặc bị khóa.</p>
+
+<div class="incant">“Không gian khai lộ — một bước vượt ngàn!”</div>
+
+</article>
+
+<article class="spell" id="D-02" data-rank="D">
+
+<div class="rank">D-02 · CẤP D</div>
+
+<h3>Thời Tốc</h3>
+
+<span class="type">Cường hóa</span>
+
+<p><b>Mô tả:</b> Tạo hiệu ứng thời gian cục bộ giả tưởng giúp chuyển động nhanh hơn trong chốc lát.</p>
+
+<p><b>Điểm mạnh:</b> Né tránh và đổi vị trí nhanh.</p>
+
+<p><b>Giới hạn:</b> Hao ma lực, gây mệt nếu duy trì lâu.</p>
+
+<div class="incant">“Kim luân chuyển động — thời tốc khai mở!”</div>
+
+</article>
+
+<article class="spell" id="D-03" data-rank="D">
+
+<div class="rank">D-03 · CẤP D</div>
+
+<h3>Ngân Tinh Định Vị</h3>
+
+<span class="type">Định vị · Đánh dấu</span>
+
+<p><b>Mô tả:</b> Đặt dấu sao bạc ghi lại tọa độ ma pháp của một địa điểm.</p>
+
+<p><b>Điểm mạnh:</b> Hỗ trợ dịch chuyển và tạo điểm neo.</p>
+
+<p><b>Giới hạn:</b> Dấu ấn có thể bị phá hoặc nhiễu.</p>
+
+<div class="incant">“Ngân tinh ghi dấu — tọa độ hiện hình!”</div>
+
+</article>
+
+<article class="spell" id="D-04" data-rank="D">
+
+<div class="rank">D-04 · CẤP D</div>
+
+<h3>Tàn Ảnh Thời Khắc</h3>
+
+<span class="type">Ảo ảnh · Đánh lạc hướng</span>
+
+<p><b>Mô tả:</b> Tái hiện hình ảnh chuyển động vừa xảy ra bằng ma pháp.</p>
+
+<p><b>Điểm mạnh:</b> Đánh lạc hướng đối thủ.</p>
+
+<p><b>Giới hạn:</b> Không phải bản sao vật lý, không gây sát thương trực tiếp.</p>
+
+<div class="incant">“Khoảnh khắc lưu ảnh — quá khứ tái hiện!”</div>
+
+</article>
+
+<article class="spell" id="D-05" data-rank="D">
+
+<div class="rank">D-05 · CẤP D</div>
+
+<h3>Lệch Quỹ Đạo</h3>
+
+<span class="type">Phòng thủ · Điều hướng</span>
+
+<p><b>Mô tả:</b> Bẻ nhẹ đường bay của vật thể nhỏ hoặc phép yếu.</p>
+
+<p><b>Điểm mạnh:</b> Làm chệch đòn đánh đơn giản.</p>
+
+<p><b>Giới hạn:</b> Khó chống đòn diện rộng hoặc phép mạnh.</p>
+
+<div class="incant">“Quỹ đạo đổi chiều — đường đi nghe lệnh!”</div>
+
+</article>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>CHƯƠNG II — CẤP C: CỔNG VÀ THỜI VỰC</h2>
+
+<div class="spells">
+
+<article class="spell" id="C-01" data-rank="C">
+
+<div class="rank">C-01 · CẤP C</div>
+
+<h3>Cổng Ngân Hà</h3>
+
+<span class="type">Cổng không gian</span>
+
+<p><b>Mô tả:</b> Mở hai cổng nối liền các vị trí đã xác định.</p>
+
+<p><b>Điểm mạnh:</b> Dịch chuyển xa và hỗ trợ đồng đội.</p>
+
+<p><b>Giới hạn:</b> Hai đầu cổng phải ổn định; tầm xa tốn nhiều ma lực.</p>
+
+<div class="incant">“Hai đầu ngân hà — không gian nối liền!”</div>
+
+</article>
+
+<article class="spell" id="C-02" data-rank="C">
+
+<div class="rank">C-02 · CẤP C</div>
+
+<h3>Thời Vực</h3>
+
+<span class="type">Khống chế thời gian cục bộ</span>
+
+<p><b>Mô tả:</b> Làm chuyển động trong một vùng chậm hơn tương đối.</p>
+
+<p><b>Điểm mạnh:</b> Hạn chế bước tiến và tạo cơ hội rút lui.</p>
+
+<p><b>Giới hạn:</b> Không dừng thời gian tuyệt đối; mục tiêu mạnh có thể kháng cự.</p>
+
+<div class="incant">“Thời lưu ngưng nhịp — vạn vật chậm bước!”</div>
+
+</article>
+
+<article class="spell" id="C-03" data-rank="C">
+
+<div class="rank">C-03 · CẤP C</div>
+
+<h3>Không Gian Gấp Khúc</h3>
+
+<span class="type">Bẻ đường đi</span>
+
+<p><b>Mô tả:</b> Tạo đường không gian cong để đổi hướng vật thể hoặc phép.</p>
+
+<p><b>Điểm mạnh:</b> Tạo góc tấn công bất ngờ.</p>
+
+<p><b>Giới hạn:</b> Phạm vi hạn chế, cần duy trì cấu trúc ổn định.</p>
+
+<div class="incant">“Thiên địa uốn mình — vạn lộ đổi chiều!”</div>
+
+</article>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>CHƯƠNG III — CẤP B: MẠNG LƯỚI THỜI-KHÔNG</h2>
+
+<div class="spells">
+
+<article class="spell" id="B-01" data-rank="B">
+
+<div class="rank">B-01 · CẤP B</div>
+
+<h3>Thiên La Tọa Độ</h3>
+
+<span class="type">Kiểm soát chiến trường</span>
+
+<p><b>Mô tả:</b> Dệt mạng tọa độ trên khu vực, cảm nhận chuyển động gần điểm neo.</p>
+
+<p><b>Điểm mạnh:</b> Điều phối vị trí và dịch chuyển giữa các điểm đã đánh dấu.</p>
+
+<p><b>Giới hạn:</b> Không nhìn xuyên mọi vật; điểm neo hỏng gây nhiễu.</p>
+
+<div class="incant">“Thiên la trải rộng — vạn điểm quy về!”</div>
+
+</article>
+
+<article class="spell" id="B-02" data-rank="B">
+
+<div class="rank">B-02 · CẤP B</div>
+
+<h3>Thời Khắc Phân Vùng</h3>
+
+<span class="type">Điều tiết thời gian</span>
+
+<p><b>Mô tả:</b> Chia khu vực thành nhiều vùng có nhịp chuyển động ma pháp khác nhau.</p>
+
+<p><b>Điểm mạnh:</b> Kiểm soát đường tiến và tạo hành lang an toàn.</p>
+
+<p><b>Giới hạn:</b> Chỉ duy trì được một số vùng; ranh giới phức tạp tốn ma lực.</p>
+
+<div class="incant">“Vạn vực phân thời — mỗi miền một nhịp!”</div>
+
+</article>
+
+<article class="spell" id="B-03" data-rank="B">
+
+<div class="rank">B-03 · CẤP B</div>
+
+<h3>Liên Kết Thời-Không</h3>
+
+<span class="type">Mạng lưới điểm neo</span>
+
+<p><b>Mô tả:</b> Kết nối các điểm neo để truyền tín hiệu và định tuyến dịch chuyển.</p>
+
+<p><b>Điểm mạnh:</b> Hỗ trợ phối hợp nhóm và tạo nhiều lối đi.</p>
+
+<p><b>Giới hạn:</b> Nút trung tâm hỏng có thể làm sập các liên kết phụ thuộc.</p>
+
+<div class="incant">“Vạn điểm giao hội — thời không kết thành mạng!”</div>
+
+</article>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>CHƯƠNG IV — CẤP A: TẦNG KHÔNG GIAN VÀ KHOẢNH KHẮC</h2>
+
+<div class="spells">
+
+<article class="spell" id="A-01" data-rank="A">
+
+<div class="rank">A-01 · CẤP A</div>
+
+<h3>Mê Cung Vô Cự</h3>
+
+<span class="type">Không gian đa tầng</span>
+
+<p><b>Mô tả:</b> Tạo nhiều lớp không gian gấp khúc, nối các lối đi theo cấu trúc đã thiết lập.</p>
+
+<p><b>Điểm mạnh:</b> Chia cắt chiến trường và bảo vệ khu vực.</p>
+
+<p><b>Giới hạn:</b> Điểm neo bị phá có thể làm mê cung rối loạn.</p>
+
+<div class="incant">“Vô cự khai tầng — vạn lộ nhập mê cung!”</div>
+
+</article>
+
+<article class="spell" id="A-02" data-rank="A">
+
+<div class="rank">A-02 · CẤP A</div>
+
+<h3>Thần Thể Thời Không</h3>
+
+<span class="type">Biến thân · Cường hóa</span>
+
+<p><b>Mô tả:</b> Khoác giáp thời-không, tạo cổng ngắn khi di chuyển và tăng khả năng cảm nhận quỹ đạo.</p>
+
+<p><b>Điểm mạnh:</b> Cơ động và phản ứng nhanh.</p>
+
+<p><b>Giới hạn:</b> Không bất khả xâm phạm; tiêu hao ma lực liên tục.</p>
+
+<div class="incant">“Thân hợp thời không — vạn tượng quy nhất!”</div>
+
+</article>
+
+<article class="spell" id="A-03" data-rank="A">
+
+<div class="rank">A-03 · CẤP A</div>
+
+<h3>Định Mệnh Thời Khắc</h3>
+
+<span class="type">Ổn định trạng thái</span>
+
+<p><b>Mô tả:</b> Đánh dấu một trạng thái ma pháp để trì hoãn sự thay đổi trong chốc lát.</p>
+
+<p><b>Điểm mạnh:</b> Giữ cổng mở hoặc gián đoạn nhịp thi triển phép.</p>
+
+<p><b>Giới hạn:</b> Không hồi sinh hay đảo ngược toàn bộ lịch sử.</p>
+
+<div class="incant">“Khoảnh khắc định danh — thời khắc đứng yên!”</div>
+
+</article>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>CHƯƠNG V — CẤP S: VẠN TINH HUYỀN THOẠI</h2>
+
+<div class="spells">
+
+<article class="spell" id="S-01" data-rank="S">
+
+<div class="rank">S-01 · CẤP S</div>
+
+<h3>Vạn Tinh Thời Không</h3>
+
+<span class="type">Kết giới quy mô lớn</span>
+
+<p><b>Mô tả:</b> Dựng kết giới bằng hàng trăm điểm neo, điều chỉnh đường đi và mở lối dịch chuyển giữa các neo.</p>
+
+<p><b>Điểm mạnh:</b> Phòng thủ, cứu hộ và điều phối chiến trường.</p>
+
+<p><b>Giới hạn:</b> Mỗi điểm neo cần ma lực; nhiều điểm bị phá sẽ khiến kết giới sụp đổ.</p>
+
+<div class="incant">“Vạn tinh kết giới — thiên địa quy về một!”</div>
+
+</article>
+
+<article class="spell" id="S-02" data-rank="S">
+
+<div class="rank">S-02 · CẤP S</div>
+
+<h3>Nghịch Lưu Thời Khắc</h3>
+
+<span class="type">Tái lập trạng thái</span>
+
+<p><b>Mô tả:</b> Khôi phục trạng thái trước đó của vật vô tri hoặc cấu trúc ma pháp nếu trạng thái ấy đã được ghi lại.</p>
+
+<p><b>Điểm mạnh:</b> Phục hồi cổng hoặc cấu trúc vừa hư hại.</p>
+
+<p><b>Giới hạn:</b> Không hồi sinh, không phục hồi ký ức và không đảo ngược toàn bộ lịch sử.</p>
+
+<div class="incant">“Dòng chảy hồi quy — tái hiện thời khắc!”</div>
+
+</article>
+
+<article class="spell" id="S-03" data-rank="S">
+
+<div class="rank">S-03 · CẤP S · TUYỆT KỸ TỐI THƯỢNG</div>
+
+<h3>Tái Cấu Trúc Không-Thời Gian</h3>
+
+<span class="type">Tái cấu trúc · Tối thượng</span>
+
+<p><b>Mô tả:</b> Kết hợp mạng điểm neo, lớp không gian gấp khúc, vùng thời gian và các liên kết thành một cấu trúc thống nhất trong phạm vi hữu hạn.</p>
+
+<p><b>Điểm mạnh:</b> Sắp xếp lại đường nối giữa tọa độ đã đánh dấu, ổn định nhịp thời gian ma pháp và tái lập cổng nếu còn dữ liệu.</p>
+
+<p><b>Giới hạn:</b> Cần nhiều điểm neo và sự tập trung tuyệt đối. Thay đổi càng lớn càng tốn ma lực. Nếu mạng trung tâm đứt, cấu trúc sụp đổ; Grimoire có thể ngủ để hồi phục.</p>
+
+<div class="incant">
+
+“Thiên địa phân định — thời khắc luân chuyển!<br>
+
+Không gian tái lập — vạn tượng quy nguyên!<br>
+
+<b>TÁI CẤU TRÚC KHÔNG-THỜI GIAN!</b>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>✧ Bốn quy luật của Grimoire</h2>
+
+<div class="content">
+
+<p><b>1. Tọa độ:</b> Dịch chuyển chính xác cần biết hoặc đánh dấu điểm đến.</p>
+
+<p><b>2. Nhịp thời gian:</b> Chỉ tác động cục bộ, không điều khiển thời gian toàn vũ trụ.</p>
+
+<p><b>3. Điểm neo:</b> Phép cấp cao cần dấu bạc hoặc tinh thể xanh để ổn định.</p>
+
+<p><b>4. Ngân sách ma lực:</b> Tầm xa, thời lượng và số mục tiêu càng lớn thì càng tốn ma lực.</p>
+
+<p><i>Grimoire lấy cảm hứng từ hình học không gian và các ý niệm về thời gian trong vật lý. Cổng dịch chuyển và tái cấu trúc không-thời gian là yếu tố giả tưởng.</i></p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+✧ GRIMOIRE — KHÔNG THỜI VẠN TƯỢNG ✧<br>
+
+“Chỉ có thể tái cấu trúc những gì ta hiểu, đánh dấu và đủ sức duy trì.”
+
+</footer>
+
+<script>
+
+function filterSpells() {
+
+  const query = document.getElementById("search")
+
+    .value.toLocaleLowerCase("vi");
+
+  const rank = document.getElementById("rank").value;
+
+  document.querySelectorAll(".spell").forEach(spell => {
+
+    const text = spell.innerText.toLocaleLowerCase("vi");
+
+    const matchesText = text.includes(query);
+
+    const matchesRank = rank === "all" || spell.dataset.rank === rank;
+
+    spell.style.display =
+
+      matchesText && matchesRank ? "" : "none";
+
+  });
+
+  document.querySelectorAll(".panel").forEach(panel => {
+
+    if (!panel.querySelector(".spell")) return;
+
+    panel.querySelectorAll(".spell").forEach(spell => {
+
+      // Các thẻ phép được lọc trực tiếp ở trên.
+
+    });
+
+  });
+
+}
+
+</script>
+
+</body>
+
+</html>
